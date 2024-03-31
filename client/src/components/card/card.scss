@@ -1,0 +1,63 @@
+$maxWidth: 1920;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+} 
+
+.card__container {
+    width: 350px;
+    cursor: pointer;
+    height: 400px;
+    padding: 2rem 1rem;
+    background-color: #FFF;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 16px 0px rgba(34, 60, 80, 0.19);
+    transition-duration: .2s;
+    &:hover {
+        transform: scale(1.02);
+    }
+    img {
+        width: 220px;
+        height: 240px;
+        margin: 0 auto;
+    }
+    #card__block {
+        margin-top: auto;
+        .title__price {
+            display: flex;
+            justify-content: space-between;
+            h3 {
+                @include adaptiv-font(20,15);
+                font-weight: 600;
+            }
+            strong {
+                color: rgb(255, 165, 66);
+                @include adaptiv-font(20,15);
+                font-weight: 600;
+            }
+        }
+        .rate__block{
+            display: flex;
+            justify-content: space-between;
+            div {
+                display: flex;
+            }
+            p {
+                @include adaptiv-font(20,15);
+                font-weight: 600;
+                color: rgb(131,131,131);
+            }
+            button {
+                @include adaptiv-font(20,15);
+                font-weight: 600;
+                transition-duration: .2s;
+                &:hover {
+                    color: rgb(255, 165, 66);
+                }
+            }
+        }
+    }
+}

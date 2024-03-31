@@ -1,0 +1,39 @@
+$maxWidth: 1920;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+} 
+
+div .favorite__container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    @media screen and (max-width: 1250px) {
+        padding: 0 3rem;
+    }
+    h1 {
+        @include adaptiv-font(25,15);
+        font-weight: 600;
+        // margin-bottom: 2rem;
+    }
+    .favorite__block {
+        max-width: 1135px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        row-gap: 2rem;
+        column-gap: 3rem;
+        margin-top: 2rem;
+        @media screen and (max-width: 1250px) {
+            grid-template-columns: repeat(2,1fr);
+            justify-items: center;
+        }
+        @media screen and (max-width: 850px) {
+            grid-template-columns: 1fr;
+            justify-items: center;
+            margin-bottom: 4rem;
+        }
+    }
+}

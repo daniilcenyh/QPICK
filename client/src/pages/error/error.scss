@@ -1,0 +1,47 @@
+
+$maxWidth: 1920;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+} 
+
+.error__container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    #error__block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        // margin-top: 10rem;
+        background-color: #FFF;
+        max-width: 400px;
+        margin: 10rem auto;
+        padding: 3rem;
+        border-radius: 10px;
+        h1 {
+            @include adaptiv-font(45,35);
+            font-weight: 700;
+        }
+        p {
+            @include adaptiv-font(45,35);
+            font-weight: 700;
+        }
+        a {
+            background-color: #000;
+            color: #FFF;
+            border: 1px solid #000;
+            transition-duration: .3s;
+            border-radius: 10px;
+            padding: 1rem;
+            &:hover {
+                background-color: #ffffff;
+                color: #000000;
+                border: 1px solid #000000;
+            }
+        }
+    }
+    
+}

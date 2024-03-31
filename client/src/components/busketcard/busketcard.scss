@@ -1,0 +1,63 @@
+$maxWidth: 1920;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+} 
+
+.busket__card__conatiner {
+    width: auto;
+    height: auto;
+    background-color: #FFF;
+    box-shadow: 0px 0px 16px 0px rgba(34, 60, 80, 0.19);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    border-radius: 30px;
+    margin-bottom: 2rem;
+    #busket__card__block {
+        position: relative;
+        .img__count {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            .counter__block {
+                display: flex;
+                text-align: center;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+        .title__price__block {
+            display: flex;
+            flex-direction: column;
+            h2 {
+                @include adaptiv-font(18,12);
+                font-weight: 600;
+            }
+            p {
+                @include adaptiv-font(15,12);
+                font-weight: 500;
+                color: #AAAAAA;
+            }
+        }
+        .close__total__block {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            // min-height: 100%;
+            margin-top: auto;
+            justify-content: space-between;
+            gap: 10rem;
+            align-items: center;
+            strong {
+                margin-top: auto;
+                @include adaptiv-font(18,12);
+                font-weight: 600;
+            }
+        }
+    }
+}

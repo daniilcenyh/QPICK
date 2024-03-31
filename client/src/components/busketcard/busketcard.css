@@ -1,0 +1,87 @@
+.busket__card__conatiner {
+  width: auto;
+  height: auto;
+  background-color: #FFF;
+  -webkit-box-shadow: 0px 0px 16px 0px rgba(34, 60, 80, 0.19);
+          box-shadow: 0px 0px 16px 0px rgba(34, 60, 80, 0.19);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  border-radius: 30px;
+  margin-bottom: 2rem;
+}
+.busket__card__conatiner #busket__card__block {
+  position: relative;
+}
+.busket__card__conatiner #busket__card__block .img__count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+.busket__card__conatiner #busket__card__block .img__count .counter__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+.busket__card__conatiner #busket__card__block .title__price__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.busket__card__conatiner #busket__card__block .title__price__block h2 {
+  font-size: calc(12px + 6 * (100vw - 320px) / 1600);
+  font-weight: 600;
+}
+.busket__card__conatiner #busket__card__block .title__price__block p {
+  font-size: calc(12px + 3 * (100vw - 320px) / 1600);
+  font-weight: 500;
+  color: #AAAAAA;
+}
+.busket__card__conatiner #busket__card__block .close__total__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  margin-top: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.busket__card__conatiner #busket__card__block .close__total__block strong {
+  margin-top: auto;
+  font-size: calc(12px + 6 * (100vw - 320px) / 1600);
+  font-weight: 600;
+}

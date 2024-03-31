@@ -1,0 +1,73 @@
+$maxWidth: 1920;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+} 
+
+div footer {
+    max-width: 1135px;
+    background-color: #FFF;
+    // height: 200px;
+    margin: 0 auto;
+    padding: 2rem ;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px; 
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    @media screen and (max-width: 640px) {
+        grid-template-columns: repeat(2,1fr);
+        justify-items: center;
+        row-gap: 2rem;
+    }
+    #footer__block {
+        a {
+            h2 {
+                @include adaptiv-font(25, 20);
+                font-weight: 700;
+                color: black;
+                transition-duration: .3s;
+            }
+            
+        }
+        .link__block__site {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            a {
+                @include adaptiv-font(17, 12);
+                font-weight: 400;
+                color: black;
+                transition-duration: .3s;
+            }
+        }
+        .conditions_block {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            a {
+                @include adaptiv-font(17, 12);
+                font-weight: 400;
+                color: rgb(0, 0, 0);
+                transition-duration: .3s;
+            }
+            div {
+                display: flex;
+                gap: 1rem;
+                text-align: center;
+                align-items: center;
+                p{
+                    @include adaptiv-font(15, 12);
+                    cursor: pointer;
+                    font-weight: 500;
+                    color: rgb(0, 0, 0);
+                }
+            }
+        }
+        .social__block {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+    }
+}
